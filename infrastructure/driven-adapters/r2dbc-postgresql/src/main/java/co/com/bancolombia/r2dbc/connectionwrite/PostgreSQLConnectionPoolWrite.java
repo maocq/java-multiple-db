@@ -1,4 +1,4 @@
-package co.com.bancolombia.r2dbc.write;
+package co.com.bancolombia.r2dbc.connectionwrite;
 
 import java.time.Duration;
 
@@ -19,7 +19,7 @@ import org.springframework.data.r2dbc.repository.config.EnableR2dbcRepositories;
 import org.springframework.r2dbc.core.DatabaseClient;
 
 @Configuration
-@EnableR2dbcRepositories(basePackages = "co.com.bancolombia.r2dbc.write", entityOperationsRef = "postgresR2dbcEntityOperationsWrite")
+@EnableR2dbcRepositories(basePackages = "co.com.bancolombia.r2dbc.connectionwrite", entityOperationsRef = "postgresR2dbcEntityOperationsWrite")
 public class PostgreSQLConnectionPoolWrite {
 
 	public static final int INITIAL_SIZE = 12;
