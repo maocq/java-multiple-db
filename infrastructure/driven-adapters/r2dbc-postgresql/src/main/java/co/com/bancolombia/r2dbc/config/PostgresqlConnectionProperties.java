@@ -17,5 +17,4 @@ public class PostgresqlConnectionProperties {
     private String password;
     private String host;
     private Integer port;
-
 }

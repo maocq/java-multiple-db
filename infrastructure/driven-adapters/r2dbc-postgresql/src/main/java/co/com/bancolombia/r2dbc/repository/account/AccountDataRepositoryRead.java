@@ -1,7 +1,8 @@
 package co.com.bancolombia.r2dbc.repository.account;
 
 import co.com.bancolombia.model.account.Account;
-import co.com.bancolombia.model.account.gateways.AccountRepository;
+import co.com.bancolombia.model.account.gateways.AccountRepositoryRead;
+import co.com.bancolombia.r2dbc.read.account.AccountDataDAORead;
 import co.com.bancolombia.r2dbc.repository.account.data.AccountData;
 import lombok.RequiredArgsConstructor;
 import org.reactivecommons.utils.ObjectMapper;
@@ -10,14 +11,14 @@ import reactor.core.publisher.Mono;
 
 @Repository
 @RequiredArgsConstructor
-public class AccountDataRepository implements AccountRepository {
+public class AccountDataRepositoryRead implements AccountRepositoryRead {
 
-    private final AccountDataDAO repository;
+    private final AccountDataDAORead repositoryRead;
     private final ObjectMapper mapper;
 
     @Override
     public Mono<Account> findById(long id) {
-        return repository.findById(id)
+        return repositoryRead.findById(id)
                 .map(this::toEntity);
     }
 
